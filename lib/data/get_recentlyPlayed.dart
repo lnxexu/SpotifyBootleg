@@ -1,4 +1,4 @@
-List<String> RecentlyPlayedArtists = [
+List<String> recentlyPlayedArtists = [
   'Slipknot',
   'System of the Down',
   'Deftones',
@@ -10,5 +10,10 @@ List<String> RecentlyPlayedArtists = [
   'Rage Against The Machine',
   'Thrown',
   'Avenged Sevenfold',
-  'Megadeth'
+  'Megadeth',
+  'Spiritbox',
+  '156/Silence',
+  'Knocked Loose',
+  'I Prevail',
+  'Bullet For My Valentine',
 ];

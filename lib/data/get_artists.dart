@@ -10,5 +10,10 @@ List<String> artists = [
   'Rage Against The Machine',
   'Thrown',
   'Avenged Sevenfold',
-  'Megadeth'
+  'Megadeth',
+  'Spiritbox',
+  '156/Silence',
+  'Knocked Loose',
+  'I Prevail',
+  'Bullet For My Valentine',
 ];

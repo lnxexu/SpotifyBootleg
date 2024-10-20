@@ -10,5 +10,10 @@ Map<String, String> artistImages = {
   'Rage Against The Machine': 'assets/ratm.jpg',
   'Avenged Sevenfold': 'assets/a7fold.jpg',
   'Thrown': 'assets/thrown.jpg',
-  'Megadeth': 'assets/megadeth.jpg',
+  'Megadeth': 'assets/Megadeth.jpeg',
+  '156/Silence': 'assets/156-Silence.jpg',
+  'Spiritbox': 'assets/Spiritbox.jpg',
+  'I Prevail': 'assets/iPrevail.jpg',
+  'Knocked Loose': 'assets/kl.jpg',
+  'Bullet For My Valentine': 'assets/bfmv.jpg',
 };

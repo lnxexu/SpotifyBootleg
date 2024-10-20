@@ -76,6 +76,41 @@ Map<String, List<String>> artistSongs = {
     'Tornado of Souls',
     'Peace Sells',
     'A Tout Le Monde',
+  ],
+  'Bullet For My Valentine': [
+    'Tears Don\'t Fall',
+    'Your Betrayal',
+    'Hand of Blood',
+    'All These Things I Hate (Revolve Around Me)',
+    'Waking the Demon',
+  ],
+  'I Prevail': [
+    'Bow Down',
+    'Gasoline',
+    'The Hurricane',
+    'Self-Destruction',
+    'Scars',
+  ],
+  'Knocked Loose': [
+    'Suffocate(ft. Poppy)',
+    'Slaughterhouse(ft. Brain Garis)',
+    'Blinding Faith',
+    'Slaughterhouse 2(ft. Motionless in White)',
+    'Counting Worms',
+  ],
+  'Spiritbox': [
+    'Soft Spine',
+    'Holly Roller',
+    'Circle with Me',
+    'Jaded',
+    'Blessed Be'
+  ],
+  '156/Silence': [
+    'Target Acquired',
+    'Character Development',
+    'Better Written Villain',
+    'Wants I Need',
+    'Product Placement'
   ]
 };
 

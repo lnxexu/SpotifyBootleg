@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'artist_list_page.dart'; // Import your artist list page
-import 'footer.dart'; // Import your footer if needed
-import '/data/get_recentlyPlayed.dart'; // Import recently played artists data
-import '/data/get_images.dart'; // Import images
+import 'artist_page.dart';
+import 'search.dart';
+import '../data/get_recentlyplayed.dart';
+import '/data/get_images.dart';
+import 'playlist.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,26 +12,38 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Spotify'),
+        title: const Text(
+          'Spotify',
+          style: TextStyle(fontSize: 20),
+        ),
         backgroundColor: Colors.black,
       ),
-      body: Column(
-        children: [
-          // Recently Listened Section Header
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              'Recently Listened',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'RECENTLY LISTENED',
+                style: TextStyle(
+                  fontSize: 24,
+                ),
+              ),
             ),
-          ),
-          // Recently Listened Section
-          Expanded(
-            child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: RecentlyPlayedArtists.length,
+            const SizedBox(height: 20),
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                childAspectRatio: 1.04,
+              ),
+              itemCount: recentlyPlayedArtists.length > 6
+                  ? 6
+                  : recentlyPlayedArtists.length,
               itemBuilder: (context, index) {
-                final artistName = RecentlyPlayedArtists[index];
+                final artistName = recentlyPlayedArtists[index];
                 return GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -45,8 +58,8 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -69,11 +82,8 @@ class HomeScreen extends StatelessWidget {
           if (index == 1) {
             showSearch(context: context, delegate: ArtistSearch());
           } else if (index == 2) {
-            // Navigate to Your Library screen if implemented
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const YourLibraryScreen()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const YourPlaylist()));
           }
         },
       ),
@@ -81,51 +91,79 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class RecentlyListenedCard extends StatelessWidget {
+class RecentlyListenedCard extends StatefulWidget {
   final String artistName;
 
   const RecentlyListenedCard({super.key, required this.artistName});
 
   @override
-  Widget build(BuildContext context) {
-    final String imagePath =
-        getArtistImage(artistName); // Get image path from artistImages map
+  _RecentlyListenedCardState createState() => _RecentlyListenedCardState();
+}
 
-    return Container(
-        width: 10,
-        margin: const EdgeInsets.symmetric(horizontal: 118.0),
-        decoration: BoxDecoration(
-          color: Colors.grey[850],
-          borderRadius: BorderRadius.circular(10),
+class _RecentlyListenedCardState extends State<RecentlyListenedCard> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final String imagePath = getArtistImage(widget.artistName);
+
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 300), // Animation duration
+        transform: Matrix4.translationValues(
+            0, _isHovered ? -10 : 0, 0), // Move up by 10 pixels
+        child: Container(
+          width: 200,
+          height: 200,
+          margin: const EdgeInsets.all(8.0),
+          decoration: BoxDecoration(
+            color: Colors.grey[850],
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: _isHovered
+                ? [
+                    const BoxShadow(
+                        color: Color.fromARGB(255, 0, 0, 0), blurRadius: 10)
+                  ]
+                : [],
+          ),
+          child: Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  imagePath,
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              // Brightness overlay
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(_isHovered
+                      ? 0.2
+                      : 0.5), // Adjust opacity based on hover state
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              Center(
+                child: Text(
+                  widget.artistName,
+                  style: TextStyle(
+                      color: _isHovered ? Colors.white : Colors.white54,
+                      fontSize: 20,
+                      fontWeight:
+                          _isHovered ? FontWeight.bold : FontWeight.normal),
+                  textAlign: TextAlign.center,
+                ),
+              )
+            ],
+          ),
         ),
-        child: Column(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                imagePath,
-                height: 200,
-                fit: BoxFit.cover,
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'Song Title', // You can replace this with actual song title if available
-                style: TextStyle(color: Colors.white),
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                artistName,
-                style: const TextStyle(color: Colors.white54, fontSize: 12),
-                overflow: TextOverflow.ellipsis,
-              ),
-            )
-          ],
-        ));
+      ),
+    );
   }
 
   String getArtistImage(String artistName) {
