@@ -51,4 +51,6 @@ Map<String, String> artistDescription = {
       'Disturbed is an American hard rock band from Chicago, Illinois, formed in 1994. The band includes vocalist David Draiman, bassist John Moyer, guitarist/keyboardist Dan Donegan, and drummer Mike Wengren. Former band members are vocalist Erich Awalt and bassist Steve Kmak.',
   'Gorillaz':
       'Gorillaz are an animated British rock band. The band was invented by Damon Albarn, a member of the band Blur, and Jamie Hewlett, who has worked on the comic book series Tank Girl. Even though the band members are fictional, they have released a large number of albums and music videos.',
+  'Sticky Fingers':
+      'Sticky Fingers is a reggae fusion/indie rock band formed in 2008 in Sydney, Australia. The band consists of Dylan Frost (lead vocals/guitar), Paddy Cornwall (bass/vocals), Seamus Coyle (lead guitar), Beaker Best (drums/percussion) and Freddy Crabs (keys/synth).'
 };
