@@ -16,4 +16,14 @@ Map<String, String> artistImages = {
   'I Prevail': 'assets/iPrevail.jpg',
   'Knocked Loose': 'assets/kl.jpg',
   'Bullet For My Valentine': 'assets/bfmv.jpg',
+  'Bring Me The Horizon': 'assets/bmth.jpg',
+  'Nirvana': 'assets/nirvana.jpg',
+  'Nickelback': 'assets/nickelback.jpg',
+  'Creed': 'assets/creed.jpg',
+  'Drowning Pool': 'assets/dpool.jpg',
+  'Foo Fighters': 'assets/ff.jpg',
+  'Breaking Benjamin': 'assets/bb.jpg',
+  'Disturbed': 'assets/disturbed.jpg',
+  'Gorillaz': 'assets/gorillaz.jpg',
+  'Sticky Fingers': 'assets/st.jpg'
 };
