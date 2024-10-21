@@ -32,5 +32,23 @@ Map<String, String> artistDescription = {
   'I Prevail':
       'I Prevail blends post-hardcore with elements from various genres including pop punk and rap metal. Their album "Lifelines" features a mix of melodic hooks and heavy breakdowns that appeal to a broad audience.',
   'Bullet For My Valentine':
-      'Bullet for My Valentine formed in Bridgend, Wales in 1998. The current lineup includes Matt Tuck (lead vocals), Michael Paget (lead guitar), Jamie Mathias (bass), and Jason Bowld (drums). Their early work includes the acclaimed album "The Poison," which helped define modern metalcore.'
+      'Bullet for My Valentine formed in Bridgend, Wales in 1998. The current lineup includes Matt Tuck (lead vocals), Michael Paget (lead guitar), Jamie Mathias (bass), and Jason Bowld (drums). Their early work includes the acclaimed album "The Poison," which helped define modern metalcore.',
+  'Bring Me The Horizon':
+      'Bring Me the Horizon is a British rock band from Sheffield, Yorkshire, England. The band was formed in 2004 from members of other bands within their local area. They play a style of music that combines rock and metalcore, but they have taken on a more rock style with their latest album.',
+  'Nirvana':
+      'Nirvana was an American rock band formed in Aberdeen, Washington, in 1987. Founded by lead singer and guitarist Kurt Cobain and bassist Krist Novoselic, the band went through a succession of drummers, most notably Chad Channing, before recruiting Dave Grohl in 1990.',
+  'Nickleback':
+      'Nickelback is a Canadian rock band from Hanna, Alberta, formed in 1995 by Chad Kroeger, Mike Kroeger, Ryan Peake and then-drummer Brandon Kroeger. While largely a rock band, the group has also experimented with various other musical styles such as pop and country, aside from their hard rock and post-grunge base.',
+  'Creed':
+      'Creed has been described as post-grunge, hard rock, alternative rock, and alternative metal, and also as Christian rock, grunge, nu metal, and heavy metal. Stapp\'s influences include Otis Redding, Donny Hathaway, Def Leppard, U2, The Doors, and Led Zeppelin.',
+  'Drowning Pool':
+      'Drowning Pool is an American rock band formed in Dallas, Texas, in 1996. The band was named after the 1975 film The Drowning Pool. Since its formation, the band has consisted of guitarist C.J. Pierce, drummer Mike Luce and bassist Stevie Benton, as well as a revolving cast of vocalists.',
+  'Foo Fighters':
+      'Foo Fighters, American alternative rock band, one of the world\'s most popular rock bands of the 21st century. Foo Fighters appeal to a wide audience, owing to their likable blend of heavy guitars and arena-ready anthems, which make for exciting live performances.',
+  'Breaking Benjamin':
+      'Breaking Benjamin is an American rock band from Wilkes-Barre, Pennsylvania, consisting of Benjamin Burnley, Aaron Fink, Mark Klepaski and Chad Szeliga. The band has released four albums to date. Their music is most often classified as alternative rock, and post-grunge.',
+  'Disturbed':
+      'Disturbed is an American hard rock band from Chicago, Illinois, formed in 1994. The band includes vocalist David Draiman, bassist John Moyer, guitarist/keyboardist Dan Donegan, and drummer Mike Wengren. Former band members are vocalist Erich Awalt and bassist Steve Kmak.',
+  'Gorillaz':
+      'Gorillaz are an animated British rock band. The band was invented by Damon Albarn, a member of the band Blur, and Jamie Hewlett, who has worked on the comic book series Tank Girl. Even though the band members are fictional, they have released a large number of albums and music videos.',
 };
