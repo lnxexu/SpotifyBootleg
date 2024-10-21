@@ -18,11 +18,12 @@ List<String> artists = [
   'Bullet For My Valentine',
   'Bring Me The Horizon',
   'Nirvana',
-  'Nickleback',
+  'Nickelback',
   'Creed',
   'Drowning Pool',
   'Foo Fighters',
   'Breaking Benjamin',
   'Disturbed',
-  'Gorillaz'
+  'Gorillaz',
+  'Sticky Fingers'
 ];
