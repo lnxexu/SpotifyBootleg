@@ -111,6 +111,70 @@ Map<String, List<String>> artistSongs = {
     'Better Written Villain',
     'Wants I Need',
     'Product Placement'
+  ],
+  'Bring Me The Horizon': [
+    'Kingslayer (ft. BABYMETAL)',
+    'Can You feel My Heart',
+    'Throne',
+    'DArkSide',
+    'Kool-Aid'
+  ],
+  'Nirvana': [
+    'Very Ape',
+    'Lithium',
+    'Smells Like Teen Spirit',
+    'About A Girl',
+    'In Bloom'
+  ],
+  'Nickelback': [
+    'Far Away',
+    'How You Remind Me',
+    'Burn It to the Ground',
+    'Photograph',
+    'Rockstar'
+  ],
+  'Creed': [
+    'Higher',
+    'One Last Breath',
+    'Smells Like Teen Spirit',
+    'My Own Prison',
+    'My Sacrifice'
+  ],
+  'Drowning Pool': ['Bodies', 'Tear Away', 'Step Up', 'Mute', 'Sinner'],
+  'Foo Fighters': [
+    'My Hero',
+    'Learn To Fly',
+    'Everlong',
+    'Best of You',
+    'All My Life'
+  ],
+  'Breaking Benjamin': [
+    'Awaken',
+    'The Diary of Jane',
+    'So Cold',
+    'Never Again',
+    'Angels Fall'
+  ],
+  'Disturbed': [
+    'The Sound Of Silence',
+    'Down With The Sickness',
+    'Stricken',
+    'Don\'t Tell Me',
+    'Voices'
+  ],
+  'Gorillaz': [
+    'Feel Good Inc.',
+    'Clint Eastwood',
+    'DARE',
+    'On Melancholy Hill',
+    'Voices'
+  ],
+  'Sticky Fingers': [
+    'How To Fly',
+    'AUSTRALIA STREET',
+    'Gold Snafu',
+    'These Girls',
+    'Cool & Calm'
   ]
 };
 
