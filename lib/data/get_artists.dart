@@ -16,4 +16,13 @@ List<String> artists = [
   'Knocked Loose',
   'I Prevail',
   'Bullet For My Valentine',
+  'Bring Me The Horizon',
+  'Nirvana',
+  'Nickleback',
+  'Creed',
+  'Drowning Pool',
+  'Foo Fighters',
+  'Breaking Benjamin',
+  'Disturbed',
+  'Gorillaz'
 ];
