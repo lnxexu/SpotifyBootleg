@@ -4,7 +4,7 @@ List<String> recentlyPlayedArtists = [
   'Deftones',
   'Paleface Swiss',
   'Killswitch Engage',
-  'Korn',
+  'Spiritbox',
   'Linkin Park',
   'Limp Bizkit',
   'Rage Against The Machine',

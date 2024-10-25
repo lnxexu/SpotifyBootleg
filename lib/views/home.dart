@@ -36,11 +36,11 @@ class HomeScreen extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
+                crossAxisCount: 2,
                 childAspectRatio: 1.04,
               ),
-              itemCount: recentlyPlayedArtists.length > 6
-                  ? 6
+              itemCount: recentlyPlayedArtists.length > 10
+                  ? 10
                   : recentlyPlayedArtists.length,
               itemBuilder: (context, index) {
                 final artistName = recentlyPlayedArtists[index];
