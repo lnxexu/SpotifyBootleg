@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import '/data/get_artists.dart'; // Ensure this path is correct
 import '/data/get_songs.dart'; // Ensure this path is correct
 import 'artist_page.dart';
+import 'package:corpuz_ui/views/playlist.dart';
+import 'package:corpuz_ui/views/home.dart';
 
 class ArtistSearch extends SearchDelegate<String> {
   ArtistSearch()
       : super(
-          searchFieldLabel: "Search artist or song",
+          searchFieldLabel: "Search",
           searchFieldStyle: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Colors.blue,
+              color: Color.fromARGB(255, 202, 202, 202),
               fontFamily: 'Raleway'),
           keyboardType: TextInputType.text,
           textInputAction: TextInputAction.search,
@@ -42,14 +44,98 @@ class ArtistSearch extends SearchDelegate<String> {
   Widget buildResults(BuildContext context) {
     final results = _getFilteredResults();
 
-    return _buildResultsList(context, results);
+    return Scaffold(
+      body: _buildResultsList(context, results),
+      bottomNavigationBar: CustomBottomNavigationBar(
+        currentIndex: 1,
+        onTap: (index) {
+          if (index == 0) {
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+          } else if (index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const YourPlaylist()),
+            );
+          }
+        },
+      ),
+    );
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    final suggestions = _getFilteredResults();
+    if (query.isEmpty) {
+      return Scaffold(
+        body: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Play what you love",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 221, 220, 220),
+                  fontFamily: 'Raleway',
+                ),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "Search for artist and songs",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Color.fromARGB(255, 221, 220, 220),
+                  fontFamily: 'Raleway',
+                ),
+              ),
+            ],
+          ),
+        ),
+        bottomNavigationBar: CustomBottomNavigationBar(
+          currentIndex: 1,
+          onTap: (index) {
+            if (index == 0) {
+              Navigator.popUntil(context, ModalRoute.withName('/'));
+            } else if (index == 2) {
+              Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      const YourPlaylist(),
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    );
+                  },
+                ),
+              );
+            }
+          },
+        ),
+      );
+    }
 
-    return _buildResultsList(context, suggestions);
+    final suggestions = _getFilteredResults();
+    return Scaffold(
+      body: _buildResultsList(context, suggestions),
+      bottomNavigationBar: CustomBottomNavigationBar(
+        currentIndex: 1,
+        onTap: (index) {
+          if (index == 0) {
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+          } else if (index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const YourPlaylist()),
+            );
+          }
+        },
+      ),
+    );
   }
 
   List<Map<String, String>> _getFilteredResults() {
@@ -66,8 +152,9 @@ class ArtistSearch extends SearchDelegate<String> {
     }
 
     // Filter songs
-    artistSongs.forEach((artistName, songs) {
-      for (var song in songs) {
+    artistSongs.forEach((artistName, songList) {
+      for (var songMap in songList['songs']!) {
+        var song = songMap['title'] as String;
         if (song.toLowerCase().contains(query.toLowerCase())) {
           results.add({
             'type': 'song',
@@ -112,12 +199,15 @@ class ArtistSearch extends SearchDelegate<String> {
           return ListTile(
             title: Text(
               result['title']!,
-              style: const TextStyle(fontFamily: 'Raleway'),
+              //size of the text
+              style: const TextStyle(
+                fontSize: 18,
+              ),
             ),
             subtitle: Text(
-              '${result['artist']}'.toUpperCase(),
+              '${result['artist']}',
               style: const TextStyle(
-                fontFamily: 'IntegralCF',
+                fontSize: 12,
                 letterSpacing: 0.5,
               ),
             ),

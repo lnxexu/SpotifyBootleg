@@ -1,5 +1,5 @@
+import 'package:corpuz_ui/views/home.dart';
 import 'package:flutter/material.dart';
-import 'views/home.dart';
 
 void main() {
   runApp(const SpotifyBootleg());
@@ -38,7 +38,7 @@ class _SpotifyBootlegState extends State<SpotifyBootleg>
     primaryColor: Colors.green,
     textTheme: ThemeData.dark().textTheme.apply(
           bodyColor: Colors.white,
-          fontFamily: 'IntegralCF', // Ensure no spaces here
+          fontFamily: 'Raleway', // Ensure no spaces here
           displayColor: Colors.white,
         ),
   );

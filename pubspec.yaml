@@ -31,6 +31,11 @@ dependencies:
   flutter:
     sdk: flutter
   audioplayers: ^6.1.0
+  video_player: ^2.4.5 
+  flutter_colorpicker: ^1.0.3
+  share: ^2.0.4
+  fluttertoast: ^8.0.8
+  email_validator:
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -86,12 +91,6 @@ flutter:
         - asset: fonts/static/Raleway-Regular.ttf
         - asset: fonts/static/Raleway-Italic.ttf
           style: italic
-    
-    - family: Archivo
-      fonts:
-        - asset: fonts/Archivo/Archivo-Black.ttf
-        - asset: fonts/Archivo/Archivo-ExtraBold.ttf
-
   
   #
   # For details regarding fonts from package dependencies,
