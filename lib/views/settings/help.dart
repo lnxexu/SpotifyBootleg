@@ -29,8 +29,6 @@ class HelpPage extends StatelessWidget {
           ),
           _buildFaqItem("Can I use Spotify offline?",
               "Yes, but only with a Spotify Premium subscription. You can download songs, playlists, and podcasts to listen to without an internet connection."),
-          _buildFaqItem("How do I create a playlist?",
-              "Yes, but only with a Spotify Premium subscription. You can download songs, playlists, and podcasts to listen to without an internet connection."),
           _buildFaqItem("Can I share music or playlists with friends??",
               "Absolutely! You can share songs, albums, or playlists via social media or direct links. You can also collaborate on playlists with friends."),
           _buildFaqItem(

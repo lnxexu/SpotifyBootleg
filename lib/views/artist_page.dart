@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import '/data/get_songs.dart'; // Import your get_songs functions
-import '/data/get_descriptions.dart'; // Import your get_descriptions functions
-import '/data/get_images.dart'; // Import your get_images functions
+import '/data/get_songs.dart';
+import '/data/get_descriptions.dart';
+import '/data/get_images.dart';
 import 'package:share/share.dart';
 import 'package:corpuz_ui/views/home.dart';
 import 'package:corpuz_ui/views/playlist.dart';
 import 'package:corpuz_ui/views/search.dart';
+import 'package:corpuz_ui/views/player.dart';
 
 class ArtistPage extends StatefulWidget {
   final String artistName;
@@ -13,15 +14,10 @@ class ArtistPage extends StatefulWidget {
   const ArtistPage({super.key, required this.artistName});
 
   @override
-  // ignore: library_private_types_in_public_api
   _ArtistPageState createState() => _ArtistPageState();
 }
 
 class _ArtistPageState extends State<ArtistPage> {
-  String nowPlayingSong = "Sample Song"; // Replace with actual now playing song
-  bool isPlaying = false;
-  bool isPlayingSong = false; // Add this variable to manage play/pause state
-
   void _shareContent(BuildContext context) {
     final RenderBox box = context.findRenderObject() as RenderBox;
     Share.share(
@@ -32,12 +28,9 @@ class _ArtistPageState extends State<ArtistPage> {
 
   @override
   Widget build(BuildContext context) {
-    // Get songs for the selected artist
     final List<String> songs = getSongsByArtist(widget.artistName);
-    // Get description for the selected artist
     final String description =
         artistDescription[widget.artistName] ?? "No description available.";
-    // Get image for the selected artist
     final String imagePath = artistImages[widget.artistName] ?? '';
 
     return Scaffold(
@@ -49,7 +42,6 @@ class _ArtistPageState extends State<ArtistPage> {
             onSelected: (String value) {
               switch (value) {
                 case 'follow':
-                  // show a snackbar or toast message
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('Followed artist'),
@@ -92,8 +84,7 @@ class _ArtistPageState extends State<ArtistPage> {
                           bottom: Radius.circular(20)),
                       child: Image.asset(
                         imagePath,
-                        height: MediaQuery.of(context).size.height *
-                            0.349, // Responsive height
+                        height: MediaQuery.of(context).size.height * 0.35,
                         width: double.infinity,
                         fit: BoxFit.cover,
                       ),
@@ -128,8 +119,7 @@ class _ArtistPageState extends State<ArtistPage> {
                               Shadow(
                                   color: Colors.black54,
                                   offset: Offset(1, 1),
-                                  blurRadius:
-                                      5), // Shadow for better readability
+                                  blurRadius: 5),
                             ],
                           ),
                           overflow: TextOverflow.ellipsis,
@@ -144,7 +134,7 @@ class _ArtistPageState extends State<ArtistPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 16), // Space before description
+                    const SizedBox(height: 16),
                     Text(
                       description,
                       style: const TextStyle(
@@ -153,8 +143,7 @@ class _ArtistPageState extends State<ArtistPage> {
                         fontFamily: String.fromEnvironment("Raleway"),
                       ),
                     ),
-                    const SizedBox(
-                        height: 20), // Space before Recently Played section
+                    const SizedBox(height: 20),
                     const Text('Recently played',
                         style: TextStyle(
                             fontSize: 22,
@@ -165,26 +154,33 @@ class _ArtistPageState extends State<ArtistPage> {
                     GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount:
-                            1, // Adjusted to fit more items in a row
-                        childAspectRatio:
-                            7, // Adjusted aspect ratio for smaller tiles
+                            MediaQuery.of(context).size.width > 600 ? 2 : 1,
+                        childAspectRatio: 7,
                       ),
                       itemCount: songs.length,
                       itemBuilder: (context, index) {
                         return Card(
                           color: Colors.grey[850],
                           margin: const EdgeInsets.all(8.0),
-                          elevation: 4, // Added elevation for modern look
+                          elevation: 4,
                           child: InkWell(
                             onTap: () {
-                              setState(() {
-                                nowPlayingSong = songs[index];
-                                isPlaying = true;
-                                isPlayingSong = true; // Set to playing state
-                              });
+                              print(
+                                  'Selected song: ${songs[index]} at index: $index');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Player(
+                                    songName: songs[index],
+                                    artistName: widget.artistName,
+                                    artistImage: imagePath,
+                                    localFilePath:
+                                        'assets/songs/${songs[index]}.mp3',
+                                  ),
+                                ),
+                              );
                             },
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -207,94 +203,35 @@ class _ArtistPageState extends State<ArtistPage> {
           ),
         ),
       ),
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (isPlaying)
-            BottomAppBar(
-              color: Colors.grey[900],
-              height: 96, // Increased height
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 12.0, vertical: 6.0), // Increased padding
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Now Playing',
-                            style: TextStyle(
-                              color: Colors.grey[400],
-                              fontSize: 12, // Increased font size
-                            ),
-                          ),
-                          Text(
-                            nowPlayingSong,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 16, // Increased font size
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            widget.artistName,
-                            style: TextStyle(
-                              color: Colors.grey[400],
-                              fontSize: 14, // Increased font size
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        isPlayingSong ? Icons.pause : Icons.play_arrow,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          isPlayingSong =
-                              !isPlayingSong; // Toggle play/pause state
-                        });
-                      },
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          CustomBottomNavigationBar(
-            currentIndex: 0,
-            onTap: (index) {
-              setState(() {
-                if (index == 1) {
-                  showSearch(
-                    context: context,
-                    delegate: ArtistSearch(),
-                  );
-                } else if (index == 2) {
-                  Navigator.push(
-                    context,
-                    PageRouteBuilder(
-                      pageBuilder: (context, animation, secondaryAnimation) =>
-                          const YourPlaylist(),
-                      transitionsBuilder:
-                          (context, animation, secondaryAnimation, child) {
-                        return FadeTransition(
-                          opacity: animation,
-                          child: child,
-                        );
-                      },
-                    ),
-                  );
-                }
-              });
-            },
-          ),
-        ],
+      bottomNavigationBar: CustomBottomNavigationBar(
+        currentIndex: 0,
+        onTap: (index) {
+          if (mounted) {
+            setState(() {
+              if (index == 1) {
+                showSearch(
+                  context: context,
+                  delegate: ArtistSearch(),
+                );
+              } else if (index == 2) {
+                Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) =>
+                        const YourPlaylist(),
+                    transitionsBuilder:
+                        (context, animation, secondaryAnimation, child) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                  ),
+                );
+              }
+            });
+          }
+        },
       ),
     );
   }

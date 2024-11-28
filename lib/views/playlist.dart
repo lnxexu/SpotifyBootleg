@@ -477,6 +477,11 @@ class _SongSearchScreenState extends State<SongSearchScreen> {
     filteredSongs = allSongs; // Initialize filtered list with all songs
   }
 
+  List<String> getGenresByArtist(String artist) {
+    // Implement your logic to get genres by artist
+    return ['Unknown Genre'];
+  }
+
   List<Map<String, String>> getAllSongs() {
     List<Map<String, String>> songsList = [];
     artistSongs.forEach((artist, songs) {

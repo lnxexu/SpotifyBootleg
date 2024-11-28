@@ -8,7 +8,6 @@ import '/data/get_images.dart';
 import 'playlist.dart';
 import '/views/settings.dart';
 import '/views/profile.dart';
-import '/views/search.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -96,7 +95,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                             FontWeight.bold)), // Increased font size and weight
               ),
             ),
-            // Additional content...
             GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -168,7 +166,8 @@ class CustomBottomNavigationBar extends StatelessWidget {
   final int currentIndex;
   final Function(int) onTap;
 
-  CustomBottomNavigationBar({required this.currentIndex, required this.onTap});
+  const CustomBottomNavigationBar(
+      {super.key, required this.currentIndex, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -208,7 +207,7 @@ class _AdSectionState extends State<AdSection> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('assets/spotify_ad.mp4');
+    _controller = VideoPlayerController.asset('assets/images/spotify_ad.mp4');
     _initializeVideoPlayerFuture = _controller.initialize().then((_) {
       setState(() {
         _controller.setLooping(true); // Loop the video

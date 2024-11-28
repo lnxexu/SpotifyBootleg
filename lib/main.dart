@@ -1,7 +1,11 @@
 import 'package:corpuz_ui/views/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Future.delayed(const Duration(milliseconds: 100));
+  setUrlStrategy(PathUrlStrategy());
   runApp(const SpotifyBootleg());
 }
 
@@ -9,7 +13,6 @@ class SpotifyBootleg extends StatefulWidget {
   const SpotifyBootleg({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _SpotifyBootlegState createState() => _SpotifyBootlegState();
 }
 
@@ -28,23 +31,17 @@ class _SpotifyBootlegState extends State<SpotifyBootleg>
   }
 
   @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    // Handle app lifecycle changes here if needed
-    print('App state changed to: $state');
-  }
-
-  var myTheme = ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: Colors.green,
-    textTheme: ThemeData.dark().textTheme.apply(
-          bodyColor: Colors.white,
-          fontFamily: 'Raleway', // Ensure no spaces here
-          displayColor: Colors.white,
-        ),
-  );
-
-  @override
   Widget build(BuildContext context) {
+    final myTheme = ThemeData(
+      brightness: Brightness.dark,
+      primaryColor: Colors.green,
+      textTheme: ThemeData.dark().textTheme.apply(
+            bodyColor: Colors.white,
+            fontFamily: 'Raleway',
+            displayColor: Colors.white,
+          ),
+    );
+
     return MaterialApp(
       title: 'Spotify Bootleg',
       theme: myTheme,
