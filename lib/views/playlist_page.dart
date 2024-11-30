@@ -6,7 +6,6 @@ import 'package:corpuz_ui/views/search.dart';
 import 'package:corpuz_ui/models/playlist.dart';
 import 'package:corpuz_ui/views/player.dart';
 
-
 class YourPlaylist extends StatefulWidget {
   const YourPlaylist({super.key});
 
@@ -27,7 +26,10 @@ class _YourPlaylistState extends State<YourPlaylist> {
         delegate: ArtistSearch(),
       );
     } else if (index == 0) {
-      Navigator.popUntil(context, ModalRoute.withName('/'));
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
+      );
     }
   }
 
