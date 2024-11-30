@@ -49,7 +49,10 @@ class ArtistSearch extends SearchDelegate<String> {
         currentIndex: 1,
         onTap: (index) {
           if (index == 0) {
-            Navigator.popUntil(context, ModalRoute.withName('/'));
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const HomeScreen()),
+            );
           } else if (index == 2) {
             Navigator.push(
               context,
@@ -125,7 +128,10 @@ class ArtistSearch extends SearchDelegate<String> {
         currentIndex: 1,
         onTap: (index) {
           if (index == 0) {
-            Navigator.popUntil(context, ModalRoute.withName('/'));
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const HomeScreen()),
+            );
           } else if (index == 2) {
             Navigator.push(
               context,
