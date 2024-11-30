@@ -133,10 +133,10 @@ packages:
     dependency: "direct main"
     description:
       name: email_validator
-      sha256: e9a90f27ab2b915a27d7f9c2a7ddda5dd752d6942616ee83529b686fc086221b
+      sha256: b19aa5d92fdd76fbc65112060c94d45ba855105a28bb6e462de7ff03b12fa1fb
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.17"
+    version: "3.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -260,10 +260,10 @@ packages:
     dependency: "direct main"
     description:
       name: image_picker
-      sha256: b6951e25b795d053a6ba03af5f710069c99349de9341af95155d52665cb4607c
+      sha256: "021834d9c0c3de46bf0fe40341fa07168407f694d9b2bb18d532dc1261867f7a"
       url: "https://pub.dev"
     source: hosted
-    version: "0.8.9"
+    version: "1.1.2"
   image_picker_android:
     dependency: transitive
     description:
@@ -276,10 +276,10 @@ packages:
     dependency: transitive
     description:
       name: image_picker_for_web
-      sha256: "869fe8a64771b7afbc99fc433a5f7be2fea4d1cb3d7c11a48b6b579eb9c797f0"
+      sha256: "717eb042ab08c40767684327be06a5d8dbb341fe791d514e4b92c7bbe1b7bb83"
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.0"
+    version: "3.0.6"
   image_picker_ios:
     dependency: transitive
     description:
