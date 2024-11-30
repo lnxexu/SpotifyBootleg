@@ -12,23 +12,23 @@ class HelpPage extends StatelessWidget {
       body: ListView(
         children: [
           _buildFaqItem(
-            'What is Spotify?',
-            'Spotify is a music streaming service that allows users to listen to millions of songs and podcasts from various artists and genres worldwide.',
+            'What is Spotify Bootleg?',
+            'Spotify Bootleg is a music streaming service that allows users to listen to millions of songs and podcasts from various artists and genres worldwide.',
           ),
           _buildFaqItem(
-            'How does Spotify work?',
-            'Spotify lets users stream music over the internet. You can create playlists, follow artists, and discover new music based on your listening habits.',
+            'How does Spotify Bootleg work?',
+            'Spotify Bootleg lets users stream music over the internet. You can create playlists, follow artists, and discover new music based on your listening habits.',
           ),
           _buildFaqItem(
-            'Is Spotify free?',
-            'Spotify offers a free tier with ads and limited features. Users can also subscribe to Spotify Premium for an ad-free experience and additional features, such as offline listening.',
+            'Is Spotify Bootleg free?',
+            'Spotify Bootleg offers a free tier with ads and limited features. Users can also subscribe to Spotify Bootleg Premium for an ad-free experience and additional features, such as offline listening.',
           ),
           _buildFaqItem(
-            'What are the benefits of Spotify Premium?',
+            'What are the benefits of Spotify Bootleg Premium?',
             'Premium features include:\n- Ad-free listening\n- Offline downloads\n- Unlimited skips\n- Higher sound quality',
           ),
-          _buildFaqItem("Can I use Spotify offline?",
-              "Yes, but only with a Spotify Premium subscription. You can download songs, playlists, and podcasts to listen to without an internet connection."),
+          _buildFaqItem("Can I use Spotify Bootleg offline?",
+              "Yes, but only with a Spotify Bootleg Premium subscription. You can download songs, playlists, and podcasts to listen to without an internet connection."),
           _buildFaqItem("Can I share music or playlists with friends??",
               "Absolutely! You can share songs, albums, or playlists via social media or direct links. You can also collaborate on playlists with friends."),
           _buildFaqItem(

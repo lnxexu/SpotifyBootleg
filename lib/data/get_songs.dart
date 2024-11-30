@@ -78,7 +78,7 @@ Map<String, Map<String, List<Map<String, String>>>> artistSongs = {
         'title': 'Please, Please, Please Let Me Get What I Want (Remastered)',
         'genre': 'Alternative Metal',
         'audio':
-            'assets/songs/Please Please Please Let Me Get What I Want - 2005 Remaster.mp3'
+            'assets/songs/Please, Please, Please Let Me Get What I Want (Remastered).mp3'
       },
       {
         'title': 'Lhabia',
@@ -242,9 +242,9 @@ Map<String, Map<String, List<Map<String, String>>>> artistSongs = {
         'audio': 'assets/songs/Guerrilla Radio.mp3'
       },
       {
-        'title': 'Bomb Track',
+        'title': 'Bombtrack',
         'genre': 'Rap Metal',
-        'audio': 'assets/songs/Bomb Track.mp3'
+        'audio': 'assets/songs/Bombtrack.mp3'
       },
       {
         'title': 'Know Your Enemy',
@@ -282,60 +282,151 @@ Map<String, Map<String, List<Map<String, String>>>> artistSongs = {
       },
     ]
   },
-  // 'Thrown': {
-  //   'songs': [
-  //     {'title': 'On the verge', 'genre': 'Metalcore'},
-  //     {'title': 'Bitter friend', 'genre': 'Metalcore'},
-  //     {'title': 'Bloodsucker', 'genre': 'Metalcore'},
-  //     {'title': 'Guilt', 'genre': 'Metalcore'},
-  //     {'title': 'Backfire', 'genre': 'Metalcore'},
-  //   ]
-  // },
-  // 'Megadeth': {
-  //   'songs': [
-  //     {
-  //       'title': 'Symphony of Destruction - Remastered 2012',
-  //       'genre': 'Thrash Metal'
-  //     },
-  //     {'title': 'Holy Wars...The Punishment Due', 'genre': 'Thrash Metal'},
-  //     {'title': 'Tornado of Souls', 'genre': 'Thrash Metal'},
-  //     {'title': 'Peace Sells', 'genre': 'Thrash Metal'},
-  //     {'title': 'A Tout Le Monde', 'genre': 'Thrash Metal'},
-  //   ]
-  // },
-  // 'Bullet For My Valentine': {
-  //   'songs': [
-  //     {'title': 'Tears Don\'t Fall', 'genre': 'Metalcore'},
-  //     {'title': 'Your Betrayal', 'genre': 'Metalcore'},
-  //     {'title': 'Hand of Blood', 'genre': 'Metalcore'},
-  //     {
-  //       'title': 'All These Things I Hate (Revolve Around Me)',
-  //       'genre': 'Metalcore'
-  //     },
-  //     {'title': 'Waking the Demon', 'genre': 'Metalcore'},
-  //   ]
-  // },
-  // 'I Prevail': {
-  //   'songs': [
-  //     {'title': 'Bow Down', 'genre': 'Metalcore'},
-  //     {'title': 'Gasoline', 'genre': 'Metalcore'},
-  //     {'title': 'The Hurricane', 'genre': 'Metalcore'},
-  //     {'title': 'Self-Destruction', 'genre': 'Metalcore'},
-  //     {'title': 'Scars', 'genre': 'Metalcore'},
-  //   ]
-  // },
-  // 'Knocked Loose': {
-  //   'songs': [
-  //     {'title': 'Suffocate(ft. Poppy)', 'genre': 'Hardcore Punk'},
-  //     {'title': 'Slaughterhouse(ft. Brain Garis)', 'genre': 'Hardcore Punk'},
-  //     {'title': 'Blinding Faith', 'genre': 'Hardcore Punk'},
-  //     {
-  //       'title': 'Slaughterhouse 2(ft. Motionless in White)',
-  //       'genre': 'Hardcore Punk'
-  //     },
-  //     {'title': 'Counting Worms', 'genre': 'Hardcore Punk'},
-  //   ]
-  // },
+  'Thrown': {
+    'songs': [
+      {
+        'title': 'on the verge',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/on the verge.mp3'
+      },
+      {
+        'title': 'bitter friend',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/bitter friend.mp3'
+      },
+      {
+        'title': 'bloodsucker',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/bloodsucker.mp3'
+      },
+      {
+        'title': 'guilt',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/guilt.mp3'
+      },
+      {
+        'title': 'fast forward',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/fast forward.mp3'
+      },
+    ]
+  },
+  'Megadeth': {
+    'songs': [
+      {
+        'title': 'Symphony of Destruction - Remastered 2012',
+        'genre': 'Thrash Metal',
+        'audio': 'assets/songs/Symphony of Destruction - Remastered 2012.mp3'
+      },
+      {
+        'title': 'Holy Wars...The Punishment Due',
+        'genre': 'Thrash Metal',
+        'audio': 'assets/songs/Holy Wars...The Punishment Due.mp3'
+      },
+      {
+        'title': 'Tornado of Souls',
+        'genre': 'Thrash Metal',
+        'audio': 'assets/songs/Tornado of Souls.mp3'
+      },
+      {
+        'title': 'Peace Sells',
+        'genre': 'Thrash Metal',
+        'audio': 'assets/songs/Peace Sells.mp3'
+      },
+      {
+        'title': 'A Tout Le Monde',
+        'genre': 'Thrash Metal',
+        'audio': 'assets/songs/A Tout Le Monde.mp3'
+      },
+    ]
+  },
+  'Bullet For My Valentine': {
+    'songs': [
+      {
+        'title': 'Tears Don\'t Fall',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/Tears Don\'t Fall.mp3'
+      },
+      {
+        'title': 'The Last Fight',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/The Last Fight.mp3'
+      },
+      {
+        'title': 'Hand of Blood',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/Hand of Blood.mp3'
+      },
+      {
+        'title': 'All These Things I Hate (Revolve Around Me)',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/All These Things I Hate (Revolve Around Me).mp3'
+      },
+      {
+        'title': '4 words (To Choke Upon)',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/4 words (To Choke Upon).mp3'
+      },
+    ]
+  },
+  'I Prevail': {
+    'songs': [
+      {
+        'title': 'Bow Down',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/Bow Down.mp3'
+      },
+      {
+        'title': 'Gasoline',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/Gasoline.mp3'
+      },
+      {
+        'title': 'Hurricane',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/Hurricane.mp3'
+      },
+      {
+        'title': 'Self-Destruction',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/Self-Destruction.mp3'
+      },
+      {
+        'title': 'Scars',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/Scars.mp3'
+      }
+    ]
+  },
+  'Knocked Loose': {
+    'songs': [
+      {
+        'title': 'Suffocate(ft. Poppy)',
+        'genre': 'Hardcore Punk',
+        'audio': 'assets/songs/Suffocate(ft. Poppy).mp3'
+      },
+      {
+        'title': 'Slaughterhouse(ft. Brain Garis)',
+        'genre': 'Hardcore Punk',
+        'audio': 'assets/songs/Slaughterhouse(ft. Brain Garis).mp3'
+      },
+      {
+        'title': 'Blinding Faith',
+        'genre': 'Hardcore Punk',
+        'audio': 'assets/songs/Blinding Faith.mp3'
+      },
+      {
+        'title': 'Slaughterhouse 2(ft. Motionless in White)',
+        'genre': 'Hardcore Punk',
+        'audio': 'assets/songs/Slaughterhouse 2(ft. Motionless in White).mp3'
+      },
+      {
+        'title': 'Counting Worms',
+        'genre': 'Hardcore Punk',
+        'audio': 'assets/songs/Counting Worms.mp3'
+      },
+    ]
+  },
   'Spiritbox': {
     'songs': [
       {
@@ -365,105 +456,301 @@ Map<String, Map<String, List<Map<String, String>>>> artistSongs = {
       },
     ]
   },
-  // '156/Silence': {
-  //   'songs': [
-  //     {'title': 'Target Acquired', 'genre': 'Metalcore'},
-  //     {'title': 'Character Development', 'genre': 'Metalcore'},
-  //     {'title': 'Better Written Villain', 'genre': 'Metalcore'},
-  //     {'title': 'Wants I Need', 'genre': 'Metalcore'},
-  //     {'title': 'Product Placement', 'genre': 'Metalcore'}
-  //   ]
-  // },
-  // 'Bring Me The Horizon': {
-  //   'songs': [
-  //     {'title': 'Kingslayer (ft. BABYMETAL)', 'genre': 'Metalcore'},
-  //     {'title': 'Can You feel My Heart', 'genre': 'Metalcore'},
-  //     {'title': 'Throne', 'genre': 'Metalcore'},
-  //     {'title': 'DArkSide', 'genre': 'Metalcore'},
-  //     {'title': 'Kool-Aid', 'genre': 'Metalcore'}
-  //   ]
-  // },
-  // 'Nirvana': {
-  //   'songs': [
-  //     {'title': 'Very Ape', 'genre': 'Grunge'},
-  //     {'title': 'Lithium', 'genre': 'Grunge'},
-  //     {'title': 'Smells Like Teen Spirit', 'genre': 'Grunge'},
-  //     {'title': 'About A Girl', 'genre': 'Grunge'},
-  //     {'title': 'In Bloom', 'genre': 'Grunge'}
-  //   ]
-  // },
-  // 'Nickelback': {
-  //   'songs': [
-  //     {'title': 'Far Away', 'genre': 'Post-Grunge'},
-  //     {'title': 'How You Remind Me', 'genre': 'Post-Grunge'},
-  //     {'title': 'Burn It to the Ground', 'genre': 'Post-Grunge'},
-  //     {'title': 'Photograph', 'genre': 'Post-Grunge'},
-  //     {'title': 'Rockstar', 'genre': 'Post-Grunge'}
-  //   ]
-  // },
-  // 'Creed': {
-  //   'songs': [
-  //     {'title': 'Higher', 'genre': 'Post-Grunge'},
-  //     {'title': 'One Last Breath', 'genre': 'Post-Grunge'},
-  //     {'title': 'Smells Like Teen Spirit', 'genre': 'Post-Grunge'},
-  //     {'title': 'My Own Prison', 'genre': 'Post-Grunge'},
-  //     {'title': 'My Sacrifice', 'genre': 'Post-Grunge'}
-  //   ]
-  // },
-  // 'Drowning Pool': {
-  //   'songs': [
-  //     {'title': 'Bodies', 'genre': 'Nu Metal'},
-  //     {'title': 'Tear Away', 'genre': 'Nu Metal'},
-  //     {'title': 'Step Up', 'genre': 'Nu Metal'},
-  //     {'title': 'Mute', 'genre': 'Nu Metal'},
-  //     {'title': 'Sinner', 'genre': 'Nu Metal'}
-  //   ]
-  // },
-  // 'Foo Fighters': {
-  //   'songs': [
-  //     {'title': 'My Hero', 'genre': 'Alternative Rock'},
-  //     {'title': 'Learn To Fly', 'genre': 'Alternative Rock'},
-  //     {'title': 'Everlong', 'genre': 'Alternative Rock'},
-  //     {'title': 'Best of You', 'genre': 'Alternative Rock'},
-  //     {'title': 'All My Life', 'genre': 'Alternative Rock'}
-  //   ]
-  // },
-  // 'Breaking Benjamin': {
-  //   'songs': [
-  //     {'title': 'Awaken', 'genre': 'Post-Grunge'},
-  //     {'title': 'The Diary of Jane', 'genre': 'Post-Grunge'},
-  //     {'title': 'So Cold', 'genre': 'Post-Grunge'},
-  //     {'title': 'Never Again', 'genre': 'Post-Grunge'},
-  //     {'title': 'Angels Fall', 'genre': 'Post-Grunge'}
-  //   ]
-  // },
-  // 'Disturbed': {
-  //   'songs': [
-  //     {'title': 'The Sound Of Silence', 'genre': 'Nu Metal'},
-  //     {'title': 'Down With The Sickness', 'genre': 'Nu Metal'},
-  //     {'title': 'Stricken', 'genre': 'Nu Metal'},
-  //     {'title': 'Don\'t Tell Me', 'genre': 'Nu Metal'},
-  //     {'title': 'Voices', 'genre': 'Nu Metal'}
-  //   ]
-  // },
-  // 'Gorillaz': {
-  //   'songs': [
-  //     {'title': 'Feel Good Inc.', 'genre': 'Alternative Rock'},
-  //     {'title': 'Clint Eastwood', 'genre': 'Alternative Rock'},
-  //     {'title': 'DARE', 'genre': 'Alternative Rock'},
-  //     {'title': 'On Melancholy Hill', 'genre': 'Alternative Rock'},
-  //     {'title': 'Voices', 'genre': 'Alternative Rock'}
-  //   ]
-  // },
-  // 'Sticky Fingers': {
-  //   'songs': [
-  //     {'title': 'How To Fly', 'genre': 'Indie Rock'},
-  //     {'title': 'AUSTRALIA STREET', 'genre': 'Indie Rock'},
-  //     {'title': 'Gold Snafu', 'genre': 'Reggae'},
-  //     {'title': 'These Girls', 'genre': 'Indie Rock'},
-  //     {'title': 'Cool & Calm', 'genre': 'Reggae'}
-  //   ]
-  // }
+  '156/Silence': {
+    'songs': [
+      {'title': 'Target Acquired', 'genre': 'Metalcore'},
+      {'title': 'Character Development', 'genre': 'Metalcore'},
+      {'title': 'Better Written Villain', 'genre': 'Metalcore'},
+      {'title': 'Wants I Need', 'genre': 'Metalcore'},
+      {'title': 'Product Placement', 'genre': 'Metalcore'}
+    ]
+  },
+  'Bring Me The Horizon': {
+    'songs': [
+      {
+        'title': 'Kingslayer (ft. BABYMETAL)',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/Kingslayer (ft. BABYMETAL).mp3'
+      },
+      {
+        'title': 'Can You feel My Heart',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/Can You feel My Heart.mp3'
+      },
+      {
+        'title': 'Throne',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/Throne.mp3'
+      },
+      {
+        'title': 'DArkSide',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/DArkSide.mp3'
+      },
+      {
+        'title': 'Kool-Aid',
+        'genre': 'Metalcore',
+        'audio': 'assets/songs/Kool-Aid.mp3'
+      }
+    ]
+  },
+  'Nirvana': {
+    'songs': [
+      {
+        'title': 'Very Ape',
+        'genre': 'Grunge',
+        'audio': 'assets/songs/Very Ape.mp3'
+      },
+      {
+        'title': 'Lithium',
+        'genre': 'Grunge',
+        'audio': 'assets/songs/Lithium.mp3'
+      },
+      {
+        'title': 'Smells Like Teen Spirit',
+        'genre': 'Grunge',
+        'audio': 'assets/songs/Smells Like Teen Spirit.mp3'
+      },
+      {
+        'title ': 'About A Girl',
+        'genre': 'Grunge',
+        'audio': 'assets/songs/About A Girl.mp3'
+      },
+      {
+        'title': 'In Bloom',
+        'genre': 'Grunge',
+        'audio': 'assets/songs/In Bloom.mp3'
+      }
+    ]
+  },
+  'Nickelback': {
+    'songs': [
+      {
+        'title': 'Far Away',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/Far Away.mp3'
+      },
+      {
+        'title': 'How You Remind Me',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/How You Remind Me.mp3'
+      },
+      {
+        'title': 'Burn It to the Ground',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/Burn It to the Ground.mp3'
+      },
+      {
+        'title': 'Photograph',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/Photograph.mp3'
+      },
+      {
+        'title': 'Rockstar',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/Rockstar.mp3'
+      }
+    ]
+  },
+  'Creed': {
+    'songs': [
+      {
+        'title': 'Higher',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/Higher.mp3'
+      },
+      {
+        'title': 'One Last Breath',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/One Last Breath.mp3'
+      },
+      {
+        'title': 'With Arms Wide Open',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/With Arms Wide Open.mp3'
+      },
+      {
+        'title': 'My Own Prison',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/My Own Prison.mp3'
+      },
+      {
+        'title': 'My Sacrifice',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/My Sacrifice.mp3'
+      }
+    ]
+  },
+  'Drowning Pool': {
+    'songs': [
+      {
+        'title': 'Bodies',
+        'genre': 'Nu Metal',
+        'audio': 'assets/songs/Bodies.mp3'
+      },
+      {
+        'title': 'Tear Away',
+        'genre': 'Nu Metal',
+        'audio': 'assets/songs/Tear Away.mp3'
+      },
+      {
+        'title': 'Step Up',
+        'genre': 'Nu Metal',
+        'audio': 'assets/songs/Step Up.mp3'
+      },
+      {'title': 'Mute', 'genre': 'Nu Metal', 'audio': 'assets/songs/Mute.mp3'},
+      {
+        'title': 'Sinner',
+        'genre': 'Nu Metal',
+        'audio': 'assets/songs/Sinner.mp3'
+      }
+    ]
+  },
+  'Foo Fighters': {
+    'songs': [
+      {
+        'title': 'My Hero',
+        'genre': 'Alternative Rock',
+        'audio': 'assets/songs/My Hero.mp3'
+      },
+      {
+        'title': 'Learn To Fly',
+        'genre': 'Alternative Rock',
+        'audio': 'assets/songs/Learn To Fly.mp3'
+      },
+      {
+        'title': 'Everlong',
+        'genre': 'Alternative Rock',
+        'audio': 'assets/songs/Everlong.mp3'
+      },
+      {
+        'title': 'Best of You',
+        'genre': 'Alternative Rock',
+        'audio': 'assets/songs/Best of You.mp3'
+      },
+      {
+        'title': 'All My Life',
+        'genre': 'Alternative Rock',
+        'audio': 'assets/songs/All My Life.mp3'
+      }
+    ]
+  },
+  'Breaking Benjamin': {
+    'songs': [
+      {
+        'title': 'Blood',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/Blood.mp3'
+      },
+      {
+        'title': 'The Diary of Jane',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/The Diary of Jane.mp3'
+      },
+      {
+        'title': 'Dance With The Devil',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/Dance With The Devil.mp3'
+      },
+      {
+        'title': 'Breath',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/Breath.mp3'
+      },
+      {
+        'title': 'So Cold - Remix',
+        'genre': 'Post-Grunge',
+        'audio': 'assets/songs/So Cold - Remix.mp3'
+      }
+    ]
+  },
+  'Disturbed': {
+    'songs': [
+      {
+        'title': 'Indestructable',
+        'genre': 'Nu Metal',
+        'audio': 'assets/songs/Indestructable.mp3'
+      },
+      {
+        'title': 'Down With The Sickness',
+        'genre': 'Nu Metal',
+        'audio': 'assets/songs/Down With The Sickness.mp3'
+      },
+      {
+        'title': 'Stricken',
+        'genre': 'Nu Metal',
+        'audio': 'assets/songs/Stricken.mp3'
+      },
+      {
+        'title': 'Ten Thousand Fists',
+        'genre': 'Nu Metal',
+        'audio': 'assets/songs/Ten Thousand Fists.mp3'
+      },
+      {
+        'title': 'Decadence',
+        'genre': 'Nu Metal',
+        'audio': 'assets/songs/Decadence.mp3'
+      }
+    ]
+  },
+  'Gorillaz': {
+    'songs': [
+      {
+        'title': 'Feel Good Inc.',
+        'genre': 'Alternative Rock',
+        'audio': 'assets/songs/Feel Good Inc..mp3'
+      },
+      {
+        'title': 'Clint Eastwood',
+        'genre': 'Alternative Rock',
+        'audio': 'assets/songs/Clint Eastwood.mp3'
+      },
+      {
+        'title': 'DARE',
+        'genre': 'Alternative Rock',
+        'audio': 'assets/songs/DARE.mp3'
+      },
+      {
+        'title': 'On Melancholy Hill',
+        'genre': 'Alternative Rock',
+        'audio': 'assets/songs/On Melancholy Hill.mp3'
+      },
+      {
+        'title': '19-2000',
+        'genre': 'Alternative Rock',
+        'audio': 'assets/songs/19-2000.mp3'
+      }
+    ]
+  },
+  'Sticky Fingers': {
+    'songs': [
+      {
+        'title': 'How To Fly',
+        'genre': 'Indie Rock',
+        'audio': 'assets/songs/How To Fly.mp3'
+      },
+      {
+        'title': 'Australia Street',
+        'genre': 'Indie Rock',
+        'audio': 'assets/songs/Australia Street.mp3'
+      },
+      {
+        'title': 'Gold Snafu',
+        'genre': 'Reggae',
+        'audio': 'assets/songs/Gold Snafu.mp3'
+      },
+      {
+        'title': 'These Girls',
+        'genre': 'Indie Rock',
+        'audio': 'assets/songs/These Girls.mp3'
+      },
+      {
+        'title': 'Cool & Calm',
+        'genre': 'Reggae',
+        'audio': 'assets/songs/Cool & Calm.mp3'
+      }
+    ]
+  }
 };
 
 List<String> getAllArtists() {

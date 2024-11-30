@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import '/data/get_songs.dart';
-import '/data/get_descriptions.dart';
-import '/data/get_images.dart';
+import 'package:provider/provider.dart'; // Add this import
 import 'package:share/share.dart';
 import 'package:corpuz_ui/views/home.dart';
-import 'package:corpuz_ui/views/playlist.dart';
+import 'package:corpuz_ui/views/playlist_page.dart';
 import 'package:corpuz_ui/views/search.dart';
 import 'package:corpuz_ui/views/player.dart';
+import '/models/song.dart'; // Add this import
 
 class ArtistPage extends StatefulWidget {
   final String artistName;
@@ -14,6 +13,7 @@ class ArtistPage extends StatefulWidget {
   const ArtistPage({super.key, required this.artistName});
 
   @override
+  // ignore: library_private_types_in_public_api
   _ArtistPageState createState() => _ArtistPageState();
 }
 
@@ -28,14 +28,14 @@ class _ArtistPageState extends State<ArtistPage> {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> songs = getSongsByArtist(widget.artistName);
-    final String description =
-        artistDescription[widget.artistName] ?? "No description available.";
-    final String imagePath = artistImages[widget.artistName] ?? '';
+    final artistProvider = Provider.of<ArtistProvider>(context);
+    final artist = artistProvider.getArtistByName(widget.artistName);
+    final List<Song> songs = artist.songs;
+    final String description = artist.description;
+    final String imagePath = artist.image;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.artistName),
         actions: [
           PopupMenuButton<String>(
             icon: const Icon(Icons.more_vert),
@@ -103,7 +103,7 @@ class _ArtistPageState extends State<ArtistPage> {
                       ),
                     ),
                     Positioned(
-                      bottom: 50,
+                      bottom: 40,
                       left: 16,
                       right: 16,
                       child: FittedBox(
@@ -168,16 +168,15 @@ class _ArtistPageState extends State<ArtistPage> {
                           child: InkWell(
                             onTap: () {
                               print(
-                                  'Selected song: ${songs[index]} at index: $index');
+                                  'Selected song: ${songs[index].title} at index: $index');
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => Player(
-                                    songName: songs[index],
+                                    songName: songs[index].title,
                                     artistName: widget.artistName,
                                     artistImage: imagePath,
-                                    localFilePath:
-                                        'assets/songs/${songs[index]}.mp3',
+                                    localFilePath: songs[index].audio,
                                   ),
                                 ),
                               );
@@ -186,7 +185,7 @@ class _ArtistPageState extends State<ArtistPage> {
                               padding: const EdgeInsets.all(8.0),
                               child: Center(
                                 child: Text(
-                                  songs[index],
+                                  songs[index].title,
                                   style: const TextStyle(color: Colors.white),
                                   overflow: TextOverflow.ellipsis,
                                 ),

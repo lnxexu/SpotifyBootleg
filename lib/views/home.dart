@@ -5,7 +5,7 @@ import 'artist_page.dart';
 import 'search.dart';
 import '../data/get_recentlyplayed.dart';
 import '/data/get_images.dart';
-import 'playlist.dart';
+import 'playlist_page.dart';
 import '/views/settings.dart';
 import '/views/profile.dart';
 
@@ -26,50 +26,145 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         backgroundColor: Colors.black,
       ),
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
+        child: Column(
+          children: [
+            Container(
+              height: 200,
+              width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.green.shade800,
-              ),
-              child: const Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
+                image: const DecorationImage(
+                  image: AssetImage('assets/images/kobe.jpg'),
+                  fit: BoxFit.cover,
+                  alignment: Alignment.center, // Centers the image
+                  colorFilter: ColorFilter.mode(
+                      Color.fromRGBO(0, 0, 0, 0.5), BlendMode.darken),
                 ),
               ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 10),
+                    height: 70,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.white, width: 2),
+                    ),
+                    child: const CircleAvatar(
+                      radius: 35,
+                      backgroundImage: AssetImage('assets/images/kobe.jpg'),
+                    ),
+                  ),
+                  const Text(
+                    'Kobe Corpuz',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Text(
+                    'cartiMananap@example.com',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.account_circle),
-              title: const Text('Account'),
-              onTap: () {
-                // Handle account tap
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProfileEditor()));
-              },
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  const SizedBox(height: 10),
+                  ListTile(
+                    leading: Icon(
+                      Icons.account_circle,
+                      color: Colors.green.shade800,
+                    ),
+                    title: const Text(
+                      'Account',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProfilePage()),
+                      );
+                    },
+                  ),
+                  const Divider(),
+                  ListTile(
+                    leading: Icon(
+                      Icons.settings,
+                      color: Colors.green.shade800,
+                    ),
+                    title: const Text(
+                      'Settings',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SettingsPage()),
+                      );
+                    },
+                  ),
+                  const Divider(),
+                  ListTile(
+                    leading: Icon(
+                      Icons.logout,
+                      color: Colors.green.shade800,
+                    ),
+                    title: const Text(
+                      'Logout',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    onTap: () {
+                      // confirmation
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: const Text('Are you sure?'),
+                            content: const Text('Do you want to logout?'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text('No'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  Navigator.pushReplacementNamed(context, '/');
+                                },
+                                child: const Text('Yes'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ],
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
-              onTap: () {
-                // Handle settings tap
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SettingsPage()));
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.logout),
-              title: const Text('Logout'),
-              onTap: () {
-                // Handle logout
-                Navigator.pop(context);
-              },
+            const Divider(),
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: const Text(
+                'Version 1.0.0',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 12,
+                ),
+              ),
             ),
           ],
         ),

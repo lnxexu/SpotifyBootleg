@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import '/data/get_artists.dart'; // Ensure this path is correct
-import '/data/get_songs.dart'; // Ensure this path is correct
-import 'artist_page.dart';
-import 'package:corpuz_ui/views/playlist.dart';
+import 'package:corpuz_ui/models/song.dart';
+import 'package:corpuz_ui/views/playlist_page.dart';
 import 'package:corpuz_ui/views/home.dart';
+import 'package:corpuz_ui/views/artist_page.dart';
 
 class ArtistSearch extends SearchDelegate<String> {
   ArtistSearch()
@@ -35,7 +34,7 @@ class ArtistSearch extends SearchDelegate<String> {
     return IconButton(
       icon: const Icon(Icons.arrow_back),
       onPressed: () {
-        close(context, '');
+        close(context, ''); // Ensure this is not causing the issue
       },
     );
   }
@@ -141,29 +140,29 @@ class ArtistSearch extends SearchDelegate<String> {
   List<Map<String, String>> _getFilteredResults() {
     List<Map<String, String>> results = [];
 
+    // Assuming you have an instance of ArtistProvider
+    ArtistProvider artistProvider = ArtistProvider();
+
     // Filter artists
-    for (var artist in artists) {
-      if (artist.toLowerCase().contains(query.toLowerCase())) {
+    for (var artist in artistProvider.artists) {
+      if (artist.name.toLowerCase().contains(query.toLowerCase())) {
         results.add({
           'type': 'artist',
-          'name': artist,
+          'name': artist.name,
         });
       }
-    }
 
-    // Filter songs
-    artistSongs.forEach((artistName, songList) {
-      for (var songMap in songList['songs']!) {
-        var song = songMap['title'] as String;
-        if (song.toLowerCase().contains(query.toLowerCase())) {
+      // Filter songs within each artist
+      for (var song in artist.songs) {
+        if (song.title.toLowerCase().contains(query.toLowerCase())) {
           results.add({
             'type': 'song',
-            'artist': artistName,
-            'title': song,
+            'artist': artist.name,
+            'title': song.title,
           });
         }
       }
-    });
+    }
 
     return results;
   }

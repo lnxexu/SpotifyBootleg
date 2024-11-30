@@ -1,12 +1,24 @@
 import 'package:corpuz_ui/views/home.dart';
+import 'package:corpuz_ui/views/login.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:provider/provider.dart';
+import 'package:corpuz_ui/models/song.dart';
+import 'package:corpuz_ui/models/playlist.dart';
+import 'package:corpuz_ui/views/artist_page.dart';
+import 'package:corpuz_ui/views/playlist_page.dart';
+import 'package:corpuz_ui/views/player.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Future.delayed(const Duration(milliseconds: 100));
-  setUrlStrategy(PathUrlStrategy());
-  runApp(const SpotifyBootleg());
+void main() {
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => PlaylistProvider()),
+        ChangeNotifierProvider(create: (_) => AudioProvider()),
+        ChangeNotifierProvider(create: (_) => ArtistProvider()),
+      ],
+      child: const SpotifyBootleg(),
+    ),
+  );
 }
 
 class SpotifyBootleg extends StatefulWidget {
@@ -30,22 +42,33 @@ class _SpotifyBootlegState extends State<SpotifyBootleg>
     super.dispose();
   }
 
+  var myTheme = ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: Colors.green,
+    textTheme: ThemeData.dark().textTheme.apply(
+          bodyColor: Colors.white,
+          fontFamily: 'Raleway',
+          displayColor: Colors.white,
+        ),
+  );
+
   @override
   Widget build(BuildContext context) {
-    final myTheme = ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: Colors.green,
-      textTheme: ThemeData.dark().textTheme.apply(
-            bodyColor: Colors.white,
-            fontFamily: 'Raleway',
-            displayColor: Colors.white,
-          ),
-    );
-
     return MaterialApp(
       title: 'Spotify Bootleg',
       theme: myTheme,
-      home: const HomeScreen(),
+      home: const LoginPage(),
+      routes: {
+        '/home': (context) => const HomeScreen(),
+        '/artist': (context) => ArtistPage(artistName: 'Artist Name'),
+        '/playlist': (context) => YourPlaylist(),
+        '/player': (context) => Player(
+              songName: '',
+              artistName: '',
+              artistImage: '',
+              localFilePath: '',
+            ), // Add Player route
+      },
     );
   }
 }
