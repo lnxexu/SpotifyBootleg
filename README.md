@@ -1,12 +1,3 @@
-## Getting Started
+## SpotifyBootleg
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**SpotifyBootleg** is a cross-platform application built with **Flutter**, designed as a Spotify-inspired music app. The project is structured to run on **Android, iOS, Web, Windows, macOS, and Linux**, demonstrating Flutter’s ability to deliver a single codebase across multiple platforms. It serves as a foundational or experimental project for exploring UI design, navigation, and application architecture similar to modern music streaming services.
